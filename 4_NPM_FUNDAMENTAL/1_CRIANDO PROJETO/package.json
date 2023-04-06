@@ -1,0 +1,23 @@
+{
+  "name": "meu-projeto",
+  "version": "1.0.0",
+  "description": "Meu projeto com npm",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EduardaMatias/nodejs.git"
+  },
+  "keywords": [
+    "NPM",
+    "NODE"
+  ],
+  "author": "Eduarda",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EduardaMatias/nodejs/issues"
+  },
+  "homepage": "https://github.com/EduardaMatias/nodejs#readme"
+}
