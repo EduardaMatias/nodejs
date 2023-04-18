@@ -1,0 +1,11 @@
+<h1>Confira os nossos produtos: </h1>
+
+<div class='wrapper-card'>
+  {{#each products}}
+    <div class='card'>
+      <h3>{{this.title}}</h3>
+      <p>R${{this.price}}</p>
+      <p><a class="more" href='/product/{{this.id}}'>Ver mais</a></p>
+    </div>
+
+  {{/each}}</div>
