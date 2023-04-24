@@ -1,0 +1,26 @@
+<h1>Livros disponíveis</h1>
+
+<table class='books-table'>
+  <tr>
+    <th>#</th>
+    <th>Título</th>
+    <th>Quantidade de páginas</th>
+    <th colspan='3'>Ações</th>
+  </tr>
+  {{#each books}}
+    <tr>
+      <td>{{this.id}}</td>
+      <td>{{this.title}}</td>
+      <td>{{this.pageqty}}</td>
+      <td><a href='/books/{{this.id}}'>Detalhes</a></td>
+      <td><a href='/books/edit/{{this.id}}'>Editar</a></td>
+      <td><a href='/book/delete/{{this.id}}'>Remover</a></td>
+    </tr>
+  {{/each}}
+</table>
+
+<div class='container-button'>
+  <button>
+    <a href='/'>Adicionar livro</a>
+  </button>
+</div>

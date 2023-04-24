@@ -1,0 +1,12 @@
+<form action='/books/deletebook/{{book.id}}' method='POST'>
+  <div class='book-page'>
+    <h1>Deletar livro</h1>
+    <p>Tem certeza que deseja deletar o livro "{{book.title}}"?</p>
+    <div class='container-button'>
+      <button>
+        <a href='/books'>Cancelar</a>
+      </button>
+      <input type='submit' value='Confirmar' />
+    </div>
+  </div>
+</form>
