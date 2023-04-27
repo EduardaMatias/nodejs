@@ -70,36 +70,31 @@ app.get('/users/:id', function (req, res) {
     .catch((err) => console.log(err));
 });
 
-app.post('/users/delete/:id', function (req, res) {
+app.post('/users/delete/:id', async function (req, res) {
   const id = req.params.id;
 
-  User.destroy({
+  await User.destroy({
     where: {
       id: id,
     },
-  })
-    .then((user) => {
-      res.redirect('/');
-    })
-    .catch((err) => console.log(err));
+  });
+  res.redirect('/');
 });
 
-app.get('/users/edit/:id', function (req, res) {
+app.get('/users/edit/:id', async function (req, res) {
   const id = req.params.id;
 
-  User.findOne({
+  const user = await User.findOne({
     include: Address,
     where: {
       id: id,
     },
-  })
-    .then((user) => {
-      res.render('useredit', { user: user.get({ plain: true }) });
-    })
-    .catch((err) => console.log(err));
+  });
+
+  res.render('useredit', { user: user.get({ plain: true }) });
 });
 
-app.post('/users/update', function (req, res) {
+app.post('/users/update', async function (req, res) {
   const id = req.body.id;
   const name = req.body.name;
   const occupation = req.body.occupation;
@@ -121,19 +116,15 @@ app.post('/users/update', function (req, res) {
   console.log(req.body);
   console.log(userData);
 
-  User.update(userData, {
+  await User.update(userData, {
     where: {
       id: id,
     },
-  })
-    .then((user) => {
-      console.log(user);
-      res.redirect('/');
-    })
-    .catch((err) => console.log(err));
+  });
+  res.redirect('/');
 });
 
-app.post('/address/create', function (req, res) {
+app.post('/address/create', async function (req, res) {
   const UserId = req.body.UserId;
   const street = req.body.street;
   const number = req.body.number;
@@ -146,21 +137,19 @@ app.post('/address/create', function (req, res) {
     UserId,
   };
 
-  Address.create(address)
-    .then(res.redirect(`/users/edit/${UserId}`))
-    .catch((err) => console.log(err));
+  await Address.create(address);
+  res.redirect(`/users/edit/${UserId}`);
 });
 
-app.post('/address/delete/', function (req, res) {
+app.post('/address/delete/', async function (req, res) {
   const id = req.body.id;
 
-  Address.destroy({
+  await Address.destroy({
     where: {
       id: id,
     },
-  })
-    .then(res.redirect('/'))
-    .catch((err) => console.log(err));
+  });
+  res.redirect('/');
 });
 
 conn
