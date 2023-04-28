@@ -1,0 +1,49 @@
+<div class='container'>
+  <div class='come-back'>
+    <a href='/tasks'>Voltar</a>
+  </div>
+  <ul class='tasks-list'>
+    <li>
+      <div class='task-item'>
+        {{#if task.done}}
+          <div class='badge-ok'>
+            <span>feita</span>
+          </div>
+        {{else}}
+          <div class='badge-nok'>
+            <span>a fazer</span>
+          </div>
+        {{/if}}</div>
+    </li>
+  </ul>
+  <h1>{{task.title}}</h1>
+  <p>{{task.description}}</p>
+  <div class='actions'>
+    {{#if this.done}}
+      <form action='/tasks/complete/{{task.id}}' method='post'>
+        <button type='submit'>
+          <i
+            class='bi bi-check2-circle'
+            title='Cancelar conclusão da tarefa'
+          ></i>
+        </button>
+      </form>
+    {{else}}
+      <form action='/tasks/complete/{{task.id}}' method='post'>
+        <button type='submit'>
+          <i class='bi bi-check2' title='Concluir tarefa'></i>
+        </button>
+      </form>
+    {{/if}}
+    <form action='/tasks/edit/{{task.id}}' method='get'>
+      <button type='submit'>
+        <i class='bi bi-pencil-square'></i>
+      </button>
+    </form>
+    <form action='/tasks/remove/{{task.id}}' method='post'>
+      <button type='submit'>
+        <i class='bi bi-x-lg'></i>
+      </button>
+    </form>
+  </div>
+</div>

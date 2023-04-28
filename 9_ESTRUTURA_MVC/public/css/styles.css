@@ -1,0 +1,202 @@
+* {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+#navbar {
+  padding: 20px 0;
+  margin-bottom: 20px;
+  background-color: #c5e1ff;
+}
+
+#navbar ul {
+  display: flex;
+  justify-content: space-around;
+}
+
+#navbar ul li {
+  list-style: none;
+}
+
+#navbar ul .logo {
+  font-weight: bold;
+  color: #2a2a2a;
+}
+
+#navbar ul .nav-items {
+  display: flex;
+  gap: 30px;
+}
+
+#navbar ul .nav-items li a {
+  text-decoration: none;
+  color: #2a2a2a;
+}
+
+#navbar ul .nav-items li a:hover {
+  opacity: 0.5;
+}
+
+#main h1,
+h2 {
+  color: #ffb700;
+}
+
+#main .container {
+  margin: 0 auto;
+  width: 50%;
+}
+
+#main .container h1 {
+  margin-bottom: 5px;
+}
+
+#main .container .form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#main .container .form .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+#main .container .form .form-group label {
+  color: #2a2a2a;
+  font-weight: 600;
+}
+
+#main .container .form .form-group .form-input-txt {
+  outline: none;
+  padding: 3px 10px;
+  border: 2px solid #ffb700;
+  border-radius: 5px;
+}
+
+#main .container .form .form-group .form-input-txt:focus {
+  border: 2px solid #ffdb82;
+}
+
+#main .container .form .btn-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+#main .container .form .btn-container input {
+  background-color: #ffb700;
+  color: #2a2a2a;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: 1s;
+  font-weight: bolder;
+}
+
+#main .container .form .btn-container input:hover {
+  background-color: #2a2a2a;
+  color: #ffb700;
+}
+
+#main .container .tasks-list li {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+#main .container .tasks-list .title {
+  font-weight: 600;
+}
+
+#main .container .tasks-list a {
+  text-decoration: none;
+  color: #00458f;
+}
+
+#main .container .tasks-list li .actions {
+  display: flex;
+  gap: 5px;
+}
+
+#main .container .tasks-list li .actions form button {
+  background-color: transparent;
+  border: none;
+}
+
+#main .container .tasks-list li .actions form button i {
+  font-size: 1.4em;
+  color: #00458f;
+  cursor: pointer;
+}
+
+#main .container .tasks-list a:hover,
+#main .container .tasks-list li .actions form button i:hover {
+  opacity: 0.5;
+}
+
+#main .container .tasks-list hr {
+  opacity: 0.3;
+}
+
+#main .container .tasks-list .task-item {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+#main .container .tasks-list .task-item .badge-ok{
+  background-color: #04ff04;
+  padding: 1px 18px;
+  border-radius: 5px;
+}
+
+#main .container .tasks-list .task-item .badge-nok{
+  background-color: #ff0404;
+  padding: 1px 10px;
+  border-radius: 5px;
+}
+
+#main .container .tasks-list .task-item .badge-ok, .badge-nok span{
+  text-transform: uppercase;
+  font-size: 0.8em;
+  font-weight: 600;
+}
+
+#main .container .tasks-list .task-item .done{
+  text-decoration: line-through;
+  color: #cdcdcd;
+}
+
+#main .container .come-back {
+  margin-bottom: 50px;
+}
+
+#main .container .come-back a{
+  color: #2a2a2a;
+  text-decoration: none;
+}
+
+#main .container .actions {
+  display: flex;
+  gap: 20px;
+}
+
+#main .container .actions button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  margin-top: 50px;
+}
+
+#main .container .actions button:hover {
+  opacity: 0.5;
+}
+
+#main .container .actions button i {
+  font-size: 1.5em;
+}

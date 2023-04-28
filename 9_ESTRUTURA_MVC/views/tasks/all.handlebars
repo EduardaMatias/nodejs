@@ -1,0 +1,55 @@
+<div class='container'>
+  <h1>Todas as tasks</h1>
+
+  <ul class='tasks-list'>
+    {{#each tasks}}
+      <li>
+        <div class='task-item'>
+          {{#if this.done}}
+            <div class='badge-ok'>
+              <span>feita</span>
+            </div>
+          {{else}}
+            <div class='badge-nok'>
+              <span>a fazer</span>
+            </div>
+          {{/if}}
+          {{#if this.done}}
+            <a href='/tasks/{{this.id}}' class='title done'>{{this.title}}</a>
+          {{else}}
+            <a href='/tasks/{{this.id}}' class='title'>{{this.title}}</a>
+          {{/if}}
+        </div>
+        <div class='actions'>
+          {{#if this.done}}
+            <form action='/tasks/complete/{{this.id}}' method='post'>
+              <button type='submit'>
+                <i
+                  class='bi bi-check2-circle'
+                  title='Cancelar conclusão da tarefa'
+                ></i>
+              </button>
+            </form>
+          {{else}}
+            <form action='/tasks/complete/{{this.id}}' method='post'>
+              <button type='submit'>
+                <i class='bi bi-check2' title='Concluir tarefa'></i>
+              </button>
+            </form>
+          {{/if}}
+          <form action='/tasks/edit/{{this.id}}' method='get'>
+            <button type='submit'>
+              <i class='bi bi-pencil-square'></i>
+            </button>
+          </form>
+          <form action='/tasks/remove/{{this.id}}' method='post'>
+            <button type='submit'>
+              <i class='bi bi-x-lg'></i>
+            </button>
+          </form>
+        </div>
+      </li>
+      <hr />
+    {{/each}}
+  </ul>
+</div>

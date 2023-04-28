@@ -1,0 +1,28 @@
+<div class='container'>
+  <h1>Criar task</h1>
+
+  <form action='/tasks/add' method='POST' class='form'>
+    <div class='form-group'>
+      <label for='title'>Título</label>
+      <input
+        type='text'
+        name='title'
+        class='form-input-txt'
+        placeholder='Insira o título da tarefa'
+      />
+    </div>
+    <div class='form-group'>
+      <label for='description'>Descrição</label>
+      <textarea
+        name='description'
+        class='form-input-txt'
+        placeholder='Insira a descrição da tarefa'
+        style='resize: vertical'
+        maxlength='200'
+      ></textarea>
+    </div>
+    <div class='btn-container'>
+      <input type='submit' value='Criar tarefa' />
+    </div>
+  </form>
+</div>

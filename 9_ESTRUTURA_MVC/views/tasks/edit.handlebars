@@ -1,0 +1,29 @@
+<div class='container'>
+  <h1>Editar task</h1>
+
+  <form action='/tasks/edit/{{task.id}}' method='POST' class='form'>
+    <div class='form-group'>
+      <label for='title'>Título</label>
+      <input
+        type='text'
+        name='title'
+        class='form-input-txt'
+        placeholder='Insira o título da tarefa'
+        value='{{task.title}}'
+      />
+    </div>
+    <div class='form-group'>
+      <label for='description'>Descrição</label>
+      <textarea
+        name='description'
+        class='form-input-txt'
+        placeholder='Insira a descrição da tarefa'
+        style='resize: vertical'
+        maxlength='200'
+      >{{task.description}}</textarea>
+    </div>
+    <div class='btn-container'>
+      <input type='submit' value='Editar tarefa' />
+    </div>
+  </form>
+</div>
