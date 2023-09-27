@@ -1,0 +1,80 @@
+<h1>Editar cadastro</h1>
+<form method='POST' action='/users/edit/{{user.id}}' class='form'>
+  <div class='form-control'>
+    <label for='name'>Nome</label>
+    <input
+      type='text'
+      value='{{user.name}}'
+      placeholder='Digite o nome'
+      name='name'
+    />
+  </div>
+  <div class='form-control'>
+    <label for='occupation'>Ocupação</label>
+    <input
+      type='text'
+      value='{{user.occupation}}'
+      placeholder='Digite a ocupação'
+      name='occupation'
+    />
+  </div>
+  <div class='form-checkbox'>
+    {{#if user.newsletter}}
+      <input type='checkbox' name='newsletter' checked />
+    {{else}}
+      <input type='checkbox' name='newsletter' />
+    {{/if}}
+    <label for='newsletter'>Enviar promoção</label>
+  </div>
+  <input type='submit' value='Editar' />
+</form>
+
+<div class='address-container'>
+  <h2>Endereço</h2>
+  <form action='/address/create/{{user.id}}' method='POST' class='form'>
+    <div class='form-control'>
+      <label for='street'>Rua</label>
+      <input type='text' placeholder='Digite a rua' name='street' />
+    </div>
+    <div class='form-control'>
+      <label for='number'>Número</label>
+      <input
+        type='text'
+        placeholder='Digite o número da residência'
+        name='number'
+      />
+    </div>
+    <div class='form-control'>
+      <label for='city'>Cidade</label>
+      <input type='text' placeholder='Digite a cidade' name='city' />
+    </div>
+    <div class='form-control'>
+      <label for='complement'>Complemento</label>
+      <input type='text' placeholder='Digite o complemento' name='complement' />
+    </div>
+    <input type='submit' value='Incluir endereço' />
+  </form>
+</div>
+
+<table class='table'>
+  <tr>
+    <th>Endereços</th>
+    <th></th>
+  </tr>
+  {{#each user.addresses}}
+    <tr>
+      <td>{{this.street}},
+        {{this.number}}{{#if this.complement}} - {{this.complement}}{{/if}}
+        /
+        {{this.city}}</td>
+      <td class='actions'>
+        <form
+          action='/address/delete/{{this.id}}/{{this.UserId}}'
+          method='POST'
+        >
+          <input type='submit' value='Remover' />
+        </form>
+      </td>
+    </tr>
+  {{/each}}
+</table>
